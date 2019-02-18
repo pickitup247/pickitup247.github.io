@@ -1,5 +1,5 @@
 git checkout master
 mdbook build
-mv -R book/* .
+mv book/* .
 git add .; git commit -m 'init'; git push origin master
 
