@@ -1,1 +1,3 @@
-git checkout 
+git checkout master
+mdbook build
+mv book/* .
