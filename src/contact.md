@@ -1,5 +1,7 @@
 # Contact
 
-My email: [ricky@pickitup247.com](mailto:xprite@rickyhan.com)
+Email: [xprite@pickitup247.com](mailto:pickitup@pickitup247.com)
 
-[For anything related to xprite](https://github.com/pickitup247/xprite-issues/issues)
+## Xprite issues
+
+[GitHub issues](https://github.com/pickitup247/xprite-issues/issues)
