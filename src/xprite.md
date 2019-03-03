@@ -1,4 +1,4 @@
-# Xprite
+# Xprite Pixel Art Editor
 
 ![logo](/static/logo.png)
 
