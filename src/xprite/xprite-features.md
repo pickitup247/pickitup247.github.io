@@ -1,18 +1,45 @@
-# Xprite
+# Autoshade
 
-## Goal
+Easily shade your artwork.
 
-The mission of Xprite is to make drawing correct pixels less painful, so you can focus on creating art. We invented lots of algorithmic tools specifically for pixel art. If you think it's missing a feature, feel free to email us your requests.
+![autoshade](/images/autoshade.gif)
 
-## Development
+# Fine-grained symmetry options
 
-> After 6 months of coding, Xprite is finally ready for release. There are still a few bugs left to fix and features to build. Place an order now to support development:
-> # [Preorder now](./xprite-order.html)
+Create intricate patterns with fine-grained symmetry control.
 
-## Wanted: Xprite Art
+Also, rotational symmetry at any angle.
 
-Finally, we are looking for a spectacular piece of pixel art created with Xprite to feature on the splash screen everytime Xprite boots up. Feel free to email us your best work.
+![symmetry](/images/symmetry.gif)
 
-## Feedback
+# Eight-way connected floodfill
 
-We are always happy to receive feedback from users, feel free to [contact us](/contact.md).
+Easily recolor thin lines.
+
+![8way](/images/8way.gif)
+
+# Texture Generator
+
+Uses wave function collapse to automatically generate intricate pixel patterns.
+
+![wfc](/images/wfc.gif)
+![wfc2](/images/wfc2.gif)
+
+# Outline tool
+
+Easily create outlines for your work.
+
+![outline](/images/outline.gif)
+# Bezier Curves
+
+Draw smooth curves by sorting monotonic curves by segment slope.
+
+![bezier](/images/bezier.gif)
+
+# Layer Exporter
+
+Save each layer to a separate file.
+
+Formats include: PNG, JPG, Twitter PNG, Aseprite, PSD.
+
+![exporter](/images/exporter.gif)
