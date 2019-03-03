@@ -1,4 +1,4 @@
-# Introducing Xprite
+# Xprite
 
 ![logo](/static/logo.png)
 
