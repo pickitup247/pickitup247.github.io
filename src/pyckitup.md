@@ -26,7 +26,7 @@
 
 1. Download pyckitup binary.
 
-> Currently only linux is supported, OSX and windows should work too but it's untested.
+> Currently only linux is supported, OSX and windows should work too but they are untested.
 
 * Linux: [download](https://github.com/pickitup247/pyckitup/releases/tag/0.1)
 
