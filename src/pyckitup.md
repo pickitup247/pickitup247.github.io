@@ -22,8 +22,6 @@
 
 * no compilation
 
-* write an entire game in Python, or ...
-
 ## Quickstart
 
 1. Download pyckitup binary.
