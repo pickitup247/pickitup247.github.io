@@ -5,7 +5,7 @@
 
 ![logo](/pyckitup/logos/facebook_cover_photo_2.png)
 
-2D game engine for Python running on WebAssembly
+Python game engine for the web
 
 [Github](https://github.com/pickitup247/pickitup)
 
