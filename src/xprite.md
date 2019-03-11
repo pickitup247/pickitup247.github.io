@@ -1,6 +1,6 @@
 # Xprite Pixel Art Editor
 
-![logo](/static/logo.png)
+![logo](/static/facebook_cover_photo_2.png)
 
 ## Simplify your pixel art workflow.
 > Xprite is a pixel art editor designed for artists, game designers and programmers.
