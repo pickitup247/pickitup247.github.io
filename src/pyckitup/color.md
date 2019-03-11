@@ -3,7 +3,7 @@
 
 # Example: Color
 
-<iframe src="/color" width="800" height="600"></iframe>
+<iframe src="https://pickitup247.com/color/" width="800" height="600"></iframe>
 
 Source code:
 

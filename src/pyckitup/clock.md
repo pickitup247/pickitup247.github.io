@@ -3,7 +3,7 @@
 
 # Example: Clock
 
-<iframe src="/clock" width="800" height="600"></iframe>
+<iframe src="https://pickitup247.com/clock/" width="800" height="600"></iframe>
 
 Source code:
 
