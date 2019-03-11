@@ -32,10 +32,7 @@
     </head>
     <body class="light">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
+        <script type="text/javascript">var path_to_root = "";</script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -57,7 +54,7 @@
         <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = default_theme; }
+            if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
         </script>
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li><a href="xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li><a href="xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li><a href="xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li><a href="pyckitup.html"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><a href="contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
+            <ol class="chapter"><li><a href="xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li><a href="xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li><a href="xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li><a href="xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li><a href="pyckitup.html"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><ol class="section"><li><a href="pyckitup/clock.html"><strong aria-hidden="true">2.1.</strong> Example: Clock</a></li><li><a href="pyckitup/color.html"><strong aria-hidden="true">2.2.</strong> Example: Color</a></li><li><a href="pyckitup/lifecycle.html"><strong aria-hidden="true">2.3.</strong> Lifecycle</a></li><li><a href="pyckitup/assets.html"><strong aria-hidden="true">2.4.</strong> Assets</a></li><li><a href="pyckitup/events.html"><strong aria-hidden="true">2.5.</strong> Events</a></li><li><a href="pyckitup/qs.html"><strong aria-hidden="true">2.6.</strong> qs module</a></li><li><a href="pyckitup/contribute.html"><strong aria-hidden="true">2.7.</strong> Contribute</a></li><li><a href="pyckitup/todo.html"><strong aria-hidden="true">2.8.</strong> TODO</a></li></ol></li><li><a href="contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -92,7 +89,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -111,7 +108,6 @@
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
-                            
                         </div>
                     </div>
                 </div>
@@ -160,7 +156,7 @@
 <a class="header" href="#wanted-xprite-art" id="wanted-xprite-art"><h2>Wanted: Xprite Art</h2></a>
 <p>Finally, we are looking for a spectacular piece of pixel art created with Xprite to feature on the splash screen everytime Xprite boots up. Feel free to email us your best work.</p>
 <a class="header" href="#feedback" id="feedback"><h2>Feedback</h2></a>
-<p>We are always happy to receive feedback from users, feel free to <a href="xprite//contact.html">contact us</a>.</p>
+<p>We are always happy to receive feedback from users, feel free to <a href="/contact.html">contact us</a>.</p>
 <a class="header" href="#features" id="features"><h1>Features</h1></a>
 <a class="header" href="#autoshade" id="autoshade"><h2>Autoshade</h2></a>
 <p>Easily color your contour to achieve 3d light effect.</p>
@@ -188,13 +184,648 @@
 <p><img src="/images/exporter.gif" alt="exporter" /></p>
 <a class="header" href="#pre-order" id="pre-order"><h1>Pre-order</h1></a>
 <iframe src="https://www.humblebundle.com/widget/v2/product/xprite-widget/Qrti68mal0?theme=light" width="526" height="263" style="border: none;" scrolling="no" frameborder="0"></iframe><a class="header" href="#pyckitup" id="pyckitup"><h1>pyckitup</h1></a>
-<p>Pyckitup is a python game engine that runs everywhere, including your browser.</p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<p>2D game engine for Python running on WebAssembly</p>
 <p><a href="https://github.com/pickitup247/pickitup">Github</a></p>
-<p>TODO: more info.</p>
+<a class="header" href="#about" id="about"><h2>About</h2></a>
+<ul>
+<li>
+<p>2D game engine for Python</p>
+</li>
+<li>
+<p>written in <a href="https://www.rust-lang.org/">Rust</a></p>
+</li>
+<li>
+<p>compiles to WebAssembly</p>
+</li>
+<li>
+<p>renders to WebGL</p>
+</li>
+<li>
+<p>single binary distribution</p>
+</li>
+<li>
+<p>no compilation</p>
+</li>
+<li>
+<p>write an entire game in Python, or ...</p>
+</li>
+</ul>
+<a class="header" href="#quickstart" id="quickstart"><h2>Quickstart</h2></a>
+<ol>
+<li>Download pyckitup binary.</li>
+</ol>
+<p>TODO: add links.</p>
+<ol start="2">
+<li>init</li>
+</ol>
+<pre><code class="language-bash">pyckitup init hello
+cd hello
+pyckitup
+</code></pre>
+<ol start="3">
+<li>
+<p>Iterate over your game</p>
+</li>
+<li>
+<p>Once you are ready to publish, you can deploy to web with</p>
+</li>
+</ol>
+<pre><code class="language-bash">pyckitup build
+cd build
+python3 server.py
+</code></pre>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#example-clock" id="example-clock"><h1>Example: Clock</h1></a>
+<iframe src="/clock" width="800" height="600"></iframe>
+<p>Source code:</p>
+<pre><code class="language-python">import qs
+from common import *
+
+def init():
+    qs.init_sounds([ [&quot;click&quot;, &quot;click.wav&quot;] ])
+    return {
+        &quot;elapsed&quot;: 0,
+        &quot;hours&quot;: 0,
+        &quot;minutes&quot;: 0,
+        &quot;seconds&quot;: 0,
+    }
+
+def onload(_):
+    qs.set_update_rate(1000)
+
+def update(state):
+    state[&quot;elapsed&quot;] += qs.update_rate()
+    elapsed = state[&quot;elapsed&quot;]
+    state[&quot;seconds&quot;] = (elapsed / 1000.) % 60.
+    state[&quot;minutes&quot;] = ((elapsed / 1000.) / 60.) % 60.
+    state[&quot;hours&quot;] = ((elapsed / 1000.) / 60. / 24.) % 24.
+
+    qs.sound(&quot;click&quot;)
+
+def draw(state):
+    qs.clear(WHITE)
+
+    # draw the frame
+    qs.circ([400, 300], 203, color=BLACK)
+    qs.circ([400, 300], 200, color=WHITE)
+    # draw the hour markers
+    for i in range(1, 13):
+        angle = 360. * ((i + 9.) * 2. / 24.)
+        rad = angle * 3.14 / 180
+        pos = [ math.sin(rad) * 200. + 400., math.cos(rad) * 200. + 300. ]
+        qs.line([[400, 300], pos], thickness=5, color=BLACK)
+    qs.circ([400, 300], 180, color=WHITE)
+
+    hour_angle = 360. * ((state[&quot;hours&quot;] + 9.) * 2. / 24.) * 3.14 / 180
+    minute_angle = 360. * ((state[&quot;minutes&quot;] + 45.) / 60.) * 3.14 / 180
+    second_angle = 360. * ((state[&quot;seconds&quot;] + 45.) / 60.) * 3.14 / 180
+
+    hour_pos =   [math.cos(hour_angle  ) * 150. + 400, math.sin(hour_angle)* 150 + 300]
+    min_pos =    [math.cos(minute_angle) * 180. + 400, math.sin(minute_angle) * 180+ 300]
+    second_pos = [math.cos(second_angle) * 180. + 400, math.sin(second_angle) * 180. + 300]
+
+    qs.line([[400, 300], hour_pos], thickness=10, color=BLACK)
+    qs.line([[400, 300], min_pos], thickness=5, color=BLUE)
+    qs.line([[400, 300], second_pos], thickness=3, color=RED)
+</code></pre>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#example-color" id="example-color"><h1>Example: Color</h1></a>
+<iframe src="/color" width="800" height="600"></iframe>
+<p>Source code:</p>
+<pre><code class="language-python">import qs
+from common import *
+
+def init():
+    qs.init_anims([
+        # name, path, nframes, duration(s)
+        [&quot;crab-up&quot;, &quot;crab-up.png&quot;, 2, 1.],
+    ])
+    return {
+        &quot;p0&quot;: [1., 1.],
+        &quot;p1&quot;: [100., 100.],
+        &quot;color&quot;: [0,0,0,1],
+    }
+
+def update(state):
+    state[&quot;p0&quot;][0] += 0.3
+    state[&quot;p0&quot;][1] += 0.3
+
+    state[&quot;color&quot;][0] += 0.001
+    state[&quot;color&quot;][1] += 0.002
+    state[&quot;color&quot;][2] += 0.003
+    state[&quot;color&quot;][0] %= 1
+    state[&quot;color&quot;][1] %= 1
+    state[&quot;color&quot;][2] %= 1
+
+
+def draw(state):
+    qs.clear(state[&quot;color&quot;])
+    qs.anim(&quot;crab-up&quot;, rect=[state[&quot;p0&quot;], state[&quot;p1&quot;]])
+
+def event(state, event):
+    if event[&quot;event&quot;] == &quot;mouse_moved&quot;:
+        state[&quot;p0&quot;][0] = event[&quot;x&quot;]
+        state[&quot;p0&quot;][1] = event[&quot;y&quot;]
+</code></pre>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#api" id="api"><h2>API</h2></a>
+<a class="header" href="#lifecycle-functions" id="lifecycle-functions"><h3>Lifecycle functions</h3></a>
+<p>The lifecycle of a pyckitup game consists of these functions:</p>
+<ol>
+<li><code>def init() -&gt; State</code></li>
+</ol>
+<p>Initializes all the assets, returns a state object which can be an integer, list, dictionary or object, etc..</p>
+<ol start="2">
+<li><code>def onload(State) -&gt; None</code></li>
+</ol>
+<p>This function is run exactly once after the window has been created. Used for setting frame rate, getting window size, etc..</p>
+<ol start="3">
+<li><code>def update(State) -&gt; None</code></li>
+</ol>
+<p>This function is guaranteeed to run once per frame.</p>
+<ol start="4">
+<li><code>def draw(State) -&gt; None</code></li>
+</ol>
+<p>Draw your game visuals here. In contrast to update function above, there is no once-per-frame guarantee.</p>
+<ol start="5">
+<li><code>def event(State, Event) -&gt; None</code></li>
+</ol>
+<p>Event is a dictionary containing the event type and its associated data. For example, mouse up, mouse moved, key up, etc..</p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#assets" id="assets"><h2>Assets</h2></a>
+<p>All assets should be placed in the static folder. There is currently no way to customize the path. Assets include sprites, sprite animations and sounds. Assets must be declared in the init lifecycle function before use. pyckitup will asynchronously load and panic when any asset is not found.</p>
+<p>The asset initializer functions are detailed below.</p>
+<a class="header" href="#directory-structure" id="directory-structure"><h2>Directory Structure</h2></a>
+<pre><code>/game
+|-run.py
+|-module.py
+|-/static        &lt;- place your assets here
+| |-sprite.png
+| |-anim.png
+| |-sound.wav
+</code></pre>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#events" id="events"><h2>Events</h2></a>
+<p>Event object are dispatched in the <code>event</code> lifecycle function:</p>
+<pre><code class="language-python">def event(state, event):
+    print(event)
+</code></pre>
+<ul>
+<li>Closed</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;closed&quot;
+}
+</code></pre>
+<ul>
+<li>Focused</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;focused&quot;
+}
+</code></pre>
+<ul>
+<li>Unfocused</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;unfocused&quot;
+}
+</code></pre>
+<ul>
+<li>Key</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;key&quot;,
+    &quot;key&quot;: &quot;A&quot;,
+    &quot;state&quot;: &quot;Pressed&quot;
+}
+</code></pre>
+<ul>
+<li>Typed</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;typed&quot;,
+    &quot;char&quot;: &quot;A&quot;
+}
+</code></pre>
+<ul>
+<li>MouseMoved</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_moved&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0
+}
+</code></pre>
+<ul>
+<li>MouseEntered</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_entered&quot;
+}
+</code></pre>
+<ul>
+<li>MouseExited</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_exited&quot;
+}
+</code></pre>
+<ul>
+<li>MouseWheel</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_wheel&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0
+}
+</code></pre>
+<ul>
+<li>MouseButton</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_button&quot;,
+    &quot;button&quot;: &quot;Left&quot;,
+    &quot;state&quot;: &quot;Pressed&quot;
+}
+</code></pre>
+<a class="header" href="#buttons" id="buttons"><h3>Buttons</h3></a>
+<pre><code>Key1
+Key2
+Key3
+Key4
+Key5
+Key6
+Key7
+Key8
+Key9
+Key0
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+Escape
+F1
+F2
+F3
+F4
+F5
+F6
+F7
+F8
+F9
+F10
+F11
+F12
+F13
+F14
+F15
+F16
+F17
+F18
+F19
+F20
+F21
+F22
+F23
+F24
+Snapshot
+Scroll
+Pause
+Insert
+Home
+Delete
+End
+PageDown
+PageUp
+Left
+Up
+Right
+Down
+Back
+Return
+Space
+Compose
+Caret
+Numlock
+Numpad0
+Numpad1
+Numpad2
+Numpad3
+Numpad4
+Numpad5
+Numpad6
+Numpad7
+Numpad8
+Numpad9
+AbntC1
+AbntC2
+Add
+Apostrophe
+Apps
+At
+Ax
+Backslash
+Calculator
+Capital
+Colon
+Comma
+Convert
+Decimal
+Divide
+Equals
+Grave
+Kana
+Kanji
+LAlt
+LBracket
+LControl
+LShift
+LWin
+Mail
+MediaSelect
+MediaStop
+Minus
+Multiply
+Mute
+MyComputer
+NavigateForward
+NavigateBackward
+NextTrack
+NoConvert
+NumpadComma
+NumpadEnter
+NumpadEquals
+OEM102
+Period
+PlayPause
+Power
+PrevTrack
+RAlt
+RBracket
+RControl
+RShift
+RWin
+Semicolon
+Slash
+Sleep
+Stop
+Subtract
+Sysrq
+Tab
+Underline
+Unlabeled
+VolumeDown
+VolumeUp
+Wake
+WebBack
+WebFavorites
+WebForward
+WebHome
+WebRefresh
+WebSearch
+WebStop
+Yen
+</code></pre>
+<a class="header" href="#buttonstate" id="buttonstate"><h3>ButtonState</h3></a>
+<ul>
+<li>Pressed</li>
+</ul>
+<p>The button was activated this frame</p>
+<ul>
+<li>Held</li>
+</ul>
+<p>The button is active but was not activated this frame</p>
+<ul>
+<li>Released</li>
+</ul>
+<p>The button was released this frame</p>
+<ul>
+<li>NotPressed</li>
+</ul>
+<p>The button is not active but was not released this frame</p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#qs-module" id="qs-module"><h2><code>qs</code> module</h2></a>
+<p><code>qs</code> module is the namespace for quicksilver library functions.</p>
+<ul>
+<li>
+<p>draw functions(shapes, sprite and sprite animation)</p>
+</li>
+<li>
+<p>sounds</p>
+</li>
+<li>
+<p>assets initializers</p>
+</li>
+<li>
+<p>functions to get mouse position etc.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note:
+The name comes from the underlying game engine quicksilver.</p>
+</blockquote>
+<a class="header" href="#types" id="types"><h3>Types:</h3></a>
+<ul>
+<li>
+<p>Point: A cartesian point represented as a list <code>[x, y]</code>.</p>
+</li>
+<li>
+<p>Color: Linear RGBA type. It is a list of four floats with range [0., 1.]. Example: <code>BLUE = [0, 0, 1, 1]</code></p>
+</li>
+<li>
+<p>Transform: Transform matrix. a list of lists that represents a 3x3 matrix whose last axis with homogeneous coordinate.</p>
+</li>
+</ul>
+<pre><code class="language-python">def rotate(deg):
+    theta = deg * 3.14 / 180.
+    c = math.cos(theta)
+    s = math.sin(theta)
+    return [
+        [c,-s, 0],
+        [s, c, 0],
+        [0, 0, 1]
+    ]
+
+def scale(x, y):
+    return [
+        [x, 0, 0],
+        [0, y, 0],
+        [0, 0, 1]
+    ]
+
+def matmul(X, Y):
+    return [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+</code></pre>
+<p>All draw calls have these common optional named arguments:</p>
+<pre><code class="language-python">qs.rect(.., color: Color, transform: Transform, z: int)
+</code></pre>
+<blockquote>
+<p>Note:
+The default values are used when the optional arguments are not specified.</p>
+<pre><code>Color: Red
+Transform: Identity
+z: 0
+</code></pre>
+</blockquote>
+<a class="header" href="#shapes" id="shapes"><h3>Shapes</h3></a>
+<a class="header" href="#rectangle" id="rectangle"><h4>Rectangle</h4></a>
+<pre><code class="language-python">qs.rect([Point, [w, h]], ..) # w is the width, h the height
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a blue rectangle with a top-left corner at
+# (100, 100) and a width and height of 32
+qs.rect([[100,100], [32,32]], color=BLUE)
+</code></pre>
+<a class="header" href="#circle" id="circle"><h4>Circle</h4></a>
+<pre><code class="language-python">qs.circ([Point], radius, ..) # radius is required
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a green circle with its center at (400, 300) and a radius of 100
+qs.circ( [400, 300], 100., color=GREEN)
+</code></pre>
+<a class="header" href="#triangle" id="triangle"><h4>Triangle</h4></a>
+<pre><code class="language-python">qs.triangle([Point, Point, Point], ..)
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a red triangle rotated by 45 degrees, and scaled down to half
+qs.triangle([[500, 50], [450, 100], [650, 150]],
+    color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
+</code></pre>
+<a class="header" href="#line" id="line"><h4>Line</h4></a>
+<pre><code class="language-python">qs.line([Point, Point], thickness: int, ..) # thickness is an optional named argument with default=1
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a red line with thickness of 2 pixels and z-height of 5
+qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
+</code></pre>
+<a class="header" href="#assets-1" id="assets-1"><h3>Assets</h3></a>
+<p>Sprite draws an image to canvas. Its name must be unique. The image must be initialized in the init lifecycle function.</p>
+<a class="header" href="#sprite" id="sprite"><h4>Sprite</h4></a>
+<pre><code class="language-python">qs.sprite(sprite_name: str, rect=[Point, Point], ..)
+# or
+qs.sprite(sprite_name: str, p0=Point, ..)
+</code></pre>
+<a class="header" href="#animation" id="animation"><h4>Animation</h4></a>
+<pre><code class="language-python">qs.anim(animation_name: str, rect=[Point, Point], ..)
+# or
+qs.anim(animation_name: str, p0=Point, ..)
+</code></pre>
+<p>These functions can be called in two ways:</p>
+<ol>
+<li>rect=[Point, Point]</li>
+</ol>
+<p>Use this to draw your sprite in the box boudned by the rect</p>
+<ol start="2">
+<li>p0=Point</li>
+</ol>
+<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
+<a class="header" href="#sound" id="sound"><h4>Sound</h4></a>
+<p>qs.sound:</p>
+<a class="header" href="#initializers" id="initializers"><h3>initializers</h3></a>
+<ul>
+<li>
+<p>qs.init_sprites</p>
+<p>args: [(name, path)]</p>
+</li>
+</ul>
+<p>qs.init_anims</p>
+<pre><code>args: [(name, path, frame width, frame height, duration(in s))]
+</code></pre>
+<p>qs.init_sounds</p>
+<pre><code>args: [(name, path)]
+</code></pre>
+<pre><code class="language-python">qs.init_sprites([
+    [&quot;crab&quot;, &quot;crab.png&quot;], # name, path
+])
+qs.init_anims([
+    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 36, 27, 1.], # frame width, frame height, duration(in s)
+    [&quot;crab-up&quot;, &quot;crab-up.png&quot;, 36, 27, 1.]
+])
+qs.init_sounds([
+    [&quot;click&quot;, &quot;click.wav&quot;]
+])
+</code></pre>
+<a class="header" href="#misc" id="misc"><h3>misc</h3></a>
+<pre><code>qs.mouse_pos()
+qs.keyboard()
+qs.keyboard_bool()
+qs.mouse_wheel_delta()
+qs.set_view()
+qs.set_update_rate()
+qs.update_rate()
+qs.clear()
+</code></pre>
+<a class="header" href="#example" id="example"><h1>Example:</h1></a>
+<pre><code># Remove any artifacts from the previous frame
+qs.clear(WHITE)
+# Draw a blue rectangle with a top-left corner at (100, 100) and a width and height of 32
+qs.rect([[100,100], [32,32]], color=BLUE)
+# Draw a blue rectangle, rotated by 45 degrees, with a z-height of 10
+qs.rect([[400, 300], [32, 32]], color=BLUE, transform=rotate(45), z=10)
+# Draw a green circle with its center at (400, 300) and a radius of 100
+qs.circ( [400, 300], 100., color=GREEN)
+# Draw a red line with thickness of 2 pixels and z-height of 5
+qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
+# Draw a red triangle rotated by 45 degrees, and scaled down to half
+qs.triangle([[500, 50], [450, 100], [650, 150]], color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
+</code></pre>
+<a class="header" href="#contributing" id="contributing"><h1>Contributing</h1></a>
+<p>pyckitup mainly uses <a href="https://rustpython.github.io/website/rustpython_vm/index.html">RustPython</a> and <a href="https://github.com/ryanisaacg/quicksilver">quicksilver</a> to do all the heavy lifting. Most of pyckitup is glue between these two crates.</p>
+<p>Quicksilver supports both native and web backends so the idea is to include a python interpreter and glue the game loop to Python functions.</p>
+<p>To compile it for development, you will need to clone my fork of cargo-web(which contains a hacky bug fix).</p>
+<pre><code>cargo install --git https://github.com/rickyhan/cargo-web cargo-web --force
+</code></pre>
+<p>Next, clone my fork of RustPython(which contains some workarounds for loading python files from localStorage).</p>
+<pre><code>git clone https://github.com/rickyhan/RustPython
+</code></pre>
+<p>Clone pyckitup.</p>
+<pre><code>git clone git@github.com:pickitup247/pyckitup.git
+</code></pre>
+<p>Compile for wasm which will be included in the native binary.</p>
+<pre><code>cargo web deploy --release
+</code></pre>
+<p>Finally, compile native binary which includes the wasm binary for deployment.</p>
+<pre><code>cargo build --release
+</code></pre>
+<a class="header" href="#todo" id="todo"><h1>TODO</h1></a>
+<p>[ ] Implement font rendering.</p>
 <a class="header" href="#contact" id="contact"><h1>Contact</h1></a>
-<p>Email: <a href="mailto:pickitup@pickitup247.com">xprite@pickitup247.com</a></p>
+<p>Email: <a href="mailto:pickitup247@rickyhan.com">pickitup247@rickyhan.com</a></p>
 <a class="header" href="#xprite-issues" id="xprite-issues"><h2>Xprite issues</h2></a>
 <p><a href="https://github.com/pickitup247/xprite-issues/issues">GitHub issues</a></p>
+<a class="header" href="#pyckitup-issues" id="pyckitup-issues"><h2>pyckitup issues</h2></a>
+<p><a href="https://github.com/pickitup247/pyckitup/issues">GitHub issues</a></p>
 
                     </main>
 

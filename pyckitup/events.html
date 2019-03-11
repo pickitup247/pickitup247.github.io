@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Events - pickitup247</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li><a href="../xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li><a href="../xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li><a href="../xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li><a href="../pyckitup.html"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><ol class="section"><li><a href="../pyckitup/clock.html"><strong aria-hidden="true">2.1.</strong> Example: Clock</a></li><li><a href="../pyckitup/color.html"><strong aria-hidden="true">2.2.</strong> Example: Color</a></li><li><a href="../pyckitup/lifecycle.html"><strong aria-hidden="true">2.3.</strong> Lifecycle</a></li><li><a href="../pyckitup/assets.html"><strong aria-hidden="true">2.4.</strong> Assets</a></li><li><a href="../pyckitup/events.html" class="active"><strong aria-hidden="true">2.5.</strong> Events</a></li><li><a href="../pyckitup/qs.html"><strong aria-hidden="true">2.6.</strong> qs module</a></li><li><a href="../pyckitup/contribute.html"><strong aria-hidden="true">2.7.</strong> Contribute</a></li><li><a href="../pyckitup/todo.html"><strong aria-hidden="true">2.8.</strong> TODO</a></li></ol></li><li><a href="../contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">pickitup247</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#events" id="events"><h2>Events</h2></a>
+<p>Event object are dispatched in the <code>event</code> lifecycle function:</p>
+<pre><code class="language-python">def event(state, event):
+    print(event)
+</code></pre>
+<ul>
+<li>Closed</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;closed&quot;
+}
+</code></pre>
+<ul>
+<li>Focused</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;focused&quot;
+}
+</code></pre>
+<ul>
+<li>Unfocused</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;unfocused&quot;
+}
+</code></pre>
+<ul>
+<li>Key</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;key&quot;,
+    &quot;key&quot;: &quot;A&quot;,
+    &quot;state&quot;: &quot;Pressed&quot;
+}
+</code></pre>
+<ul>
+<li>Typed</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;typed&quot;,
+    &quot;char&quot;: &quot;A&quot;
+}
+</code></pre>
+<ul>
+<li>MouseMoved</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_moved&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0
+}
+</code></pre>
+<ul>
+<li>MouseEntered</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_entered&quot;
+}
+</code></pre>
+<ul>
+<li>MouseExited</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_exited&quot;
+}
+</code></pre>
+<ul>
+<li>MouseWheel</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_wheel&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0
+}
+</code></pre>
+<ul>
+<li>MouseButton</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_button&quot;,
+    &quot;button&quot;: &quot;Left&quot;,
+    &quot;state&quot;: &quot;Pressed&quot;
+}
+</code></pre>
+<a class="header" href="#buttons" id="buttons"><h3>Buttons</h3></a>
+<pre><code>Key1
+Key2
+Key3
+Key4
+Key5
+Key6
+Key7
+Key8
+Key9
+Key0
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+Escape
+F1
+F2
+F3
+F4
+F5
+F6
+F7
+F8
+F9
+F10
+F11
+F12
+F13
+F14
+F15
+F16
+F17
+F18
+F19
+F20
+F21
+F22
+F23
+F24
+Snapshot
+Scroll
+Pause
+Insert
+Home
+Delete
+End
+PageDown
+PageUp
+Left
+Up
+Right
+Down
+Back
+Return
+Space
+Compose
+Caret
+Numlock
+Numpad0
+Numpad1
+Numpad2
+Numpad3
+Numpad4
+Numpad5
+Numpad6
+Numpad7
+Numpad8
+Numpad9
+AbntC1
+AbntC2
+Add
+Apostrophe
+Apps
+At
+Ax
+Backslash
+Calculator
+Capital
+Colon
+Comma
+Convert
+Decimal
+Divide
+Equals
+Grave
+Kana
+Kanji
+LAlt
+LBracket
+LControl
+LShift
+LWin
+Mail
+MediaSelect
+MediaStop
+Minus
+Multiply
+Mute
+MyComputer
+NavigateForward
+NavigateBackward
+NextTrack
+NoConvert
+NumpadComma
+NumpadEnter
+NumpadEquals
+OEM102
+Period
+PlayPause
+Power
+PrevTrack
+RAlt
+RBracket
+RControl
+RShift
+RWin
+Semicolon
+Slash
+Sleep
+Stop
+Subtract
+Sysrq
+Tab
+Underline
+Unlabeled
+VolumeDown
+VolumeUp
+Wake
+WebBack
+WebFavorites
+WebForward
+WebHome
+WebRefresh
+WebSearch
+WebStop
+Yen
+</code></pre>
+<a class="header" href="#buttonstate" id="buttonstate"><h3>ButtonState</h3></a>
+<ul>
+<li>Pressed</li>
+</ul>
+<p>The button was activated this frame</p>
+<ul>
+<li>Held</li>
+</ul>
+<p>The button is active but was not activated this frame</p>
+<ul>
+<li>Released</li>
+</ul>
+<p>The button was released this frame</p>
+<ul>
+<li>NotPressed</li>
+</ul>
+<p>The button is not active but was not released this frame</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pyckitup/assets.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pyckitup/qs.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../pyckitup/assets.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pyckitup/qs.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

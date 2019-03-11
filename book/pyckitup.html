@@ -32,10 +32,7 @@
     </head>
     <body class="light">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = "light";
-        </script>
+        <script type="text/javascript">var path_to_root = "";</script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
@@ -57,7 +54,7 @@
         <script type="text/javascript">
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
-            if (theme === null || theme === undefined) { theme = default_theme; }
+            if (theme === null || theme === undefined) { theme = 'light'; }
             document.body.className = theme;
             document.querySelector('html').className = theme + ' js';
         </script>
@@ -75,7 +72,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li><a href="xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li><a href="xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li><a href="xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li><a href="pyckitup.html" class="active"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><a href="contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
+            <ol class="chapter"><li><a href="xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li><a href="xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li><a href="xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li><a href="xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li><a href="pyckitup.html" class="active"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><ol class="section"><li><a href="pyckitup/clock.html"><strong aria-hidden="true">2.1.</strong> Example: Clock</a></li><li><a href="pyckitup/color.html"><strong aria-hidden="true">2.2.</strong> Example: Color</a></li><li><a href="pyckitup/lifecycle.html"><strong aria-hidden="true">2.3.</strong> Lifecycle</a></li><li><a href="pyckitup/assets.html"><strong aria-hidden="true">2.4.</strong> Assets</a></li><li><a href="pyckitup/events.html"><strong aria-hidden="true">2.5.</strong> Events</a></li><li><a href="pyckitup/qs.html"><strong aria-hidden="true">2.6.</strong> qs module</a></li><li><a href="pyckitup/contribute.html"><strong aria-hidden="true">2.7.</strong> Contribute</a></li><li><a href="pyckitup/todo.html"><strong aria-hidden="true">2.8.</strong> TODO</a></li></ol></li><li><a href="contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -92,7 +89,7 @@
                                 <i class="fa fa-paint-brush"></i>
                             </button>
                             <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                                 <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -111,7 +108,6 @@
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
                             </a>
-                            
                         </div>
                     </div>
                 </div>
@@ -141,9 +137,58 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#pyckitup" id="pyckitup"><h1>pyckitup</h1></a>
-<p>Pyckitup is a python game engine that runs everywhere, including your browser.</p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<p>2D game engine for Python running on WebAssembly</p>
 <p><a href="https://github.com/pickitup247/pickitup">Github</a></p>
-<p>TODO: more info.</p>
+<a class="header" href="#about" id="about"><h2>About</h2></a>
+<ul>
+<li>
+<p>2D game engine for Python</p>
+</li>
+<li>
+<p>written in <a href="https://www.rust-lang.org/">Rust</a></p>
+</li>
+<li>
+<p>compiles to WebAssembly</p>
+</li>
+<li>
+<p>renders to WebGL</p>
+</li>
+<li>
+<p>single binary distribution</p>
+</li>
+<li>
+<p>no compilation</p>
+</li>
+<li>
+<p>write an entire game in Python, or ...</p>
+</li>
+</ul>
+<a class="header" href="#quickstart" id="quickstart"><h2>Quickstart</h2></a>
+<ol>
+<li>Download pyckitup binary.</li>
+</ol>
+<p>TODO: add links.</p>
+<ol start="2">
+<li>init</li>
+</ol>
+<pre><code class="language-bash">pyckitup init hello
+cd hello
+pyckitup
+</code></pre>
+<ol start="3">
+<li>
+<p>Iterate over your game</p>
+</li>
+<li>
+<p>Once you are ready to publish, you can deploy to web with</p>
+</li>
+</ol>
+<pre><code class="language-bash">pyckitup build
+cd build
+python3 server.py
+</code></pre>
 
                     </main>
 
@@ -156,7 +201,7 @@
                         
 
                         
-                            <a rel="next" href="contact.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="pyckitup/clock.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -174,7 +219,7 @@
                 
 
                 
-                    <a href="contact.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="pyckitup/clock.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

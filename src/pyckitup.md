@@ -1,7 +1,49 @@
 # pyckitup
 
-Pyckitup is a python game engine that runs everywhere, including your browser.
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+
+
+2D game engine for Python running on WebAssembly
 
 [Github](https://github.com/pickitup247/pickitup)
 
-TODO: more info.
+## About
+
+* 2D game engine for Python
+
+* written in [Rust](https://www.rust-lang.org/)
+
+* compiles to WebAssembly
+
+* renders to WebGL
+
+* single binary distribution
+
+* no compilation
+
+* write an entire game in Python, or ...
+
+## Quickstart
+
+1. Download pyckitup binary.
+
+TODO: add links.
+
+2. init
+
+```bash
+pyckitup init hello
+cd hello
+pyckitup
+```
+
+3. Iterate over your game
+
+4. Once you are ready to publish, you can deploy to web with
+
+```bash
+pyckitup build
+cd build
+python3 server.py
+```

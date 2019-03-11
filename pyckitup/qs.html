@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>qs module - pickitup247</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">var path_to_root = "../";</script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = 'light'; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="../xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li><a href="../xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li><a href="../xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li><a href="../xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li><a href="../pyckitup.html"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><ol class="section"><li><a href="../pyckitup/clock.html"><strong aria-hidden="true">2.1.</strong> Example: Clock</a></li><li><a href="../pyckitup/color.html"><strong aria-hidden="true">2.2.</strong> Example: Color</a></li><li><a href="../pyckitup/lifecycle.html"><strong aria-hidden="true">2.3.</strong> Lifecycle</a></li><li><a href="../pyckitup/assets.html"><strong aria-hidden="true">2.4.</strong> Assets</a></li><li><a href="../pyckitup/events.html"><strong aria-hidden="true">2.5.</strong> Events</a></li><li><a href="../pyckitup/qs.html" class="active"><strong aria-hidden="true">2.6.</strong> qs module</a></li><li><a href="../pyckitup/contribute.html"><strong aria-hidden="true">2.7.</strong> Contribute</a></li><li><a href="../pyckitup/todo.html"><strong aria-hidden="true">2.8.</strong> TODO</a></li></ol></li><li><a href="../contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light <span class="default">(default)</span></button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">pickitup247</h1> 
+
+                        <div class="right-buttons">
+                            <a href="../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
+<a class="header" href="#qs-module" id="qs-module"><h2><code>qs</code> module</h2></a>
+<p><code>qs</code> module is the namespace for quicksilver library functions.</p>
+<ul>
+<li>
+<p>draw functions(shapes, sprite and sprite animation)</p>
+</li>
+<li>
+<p>sounds</p>
+</li>
+<li>
+<p>assets initializers</p>
+</li>
+<li>
+<p>functions to get mouse position etc.</p>
+</li>
+</ul>
+<blockquote>
+<p>Note:
+The name comes from the underlying game engine quicksilver.</p>
+</blockquote>
+<a class="header" href="#types" id="types"><h3>Types:</h3></a>
+<ul>
+<li>
+<p>Point: A cartesian point represented as a list <code>[x, y]</code>.</p>
+</li>
+<li>
+<p>Color: Linear RGBA type. It is a list of four floats with range [0., 1.]. Example: <code>BLUE = [0, 0, 1, 1]</code></p>
+</li>
+<li>
+<p>Transform: Transform matrix. a list of lists that represents a 3x3 matrix whose last axis with homogeneous coordinate.</p>
+</li>
+</ul>
+<pre><code class="language-python">def rotate(deg):
+    theta = deg * 3.14 / 180.
+    c = math.cos(theta)
+    s = math.sin(theta)
+    return [
+        [c,-s, 0],
+        [s, c, 0],
+        [0, 0, 1]
+    ]
+
+def scale(x, y):
+    return [
+        [x, 0, 0],
+        [0, y, 0],
+        [0, 0, 1]
+    ]
+
+def matmul(X, Y):
+    return [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+</code></pre>
+<p>All draw calls have these common optional named arguments:</p>
+<pre><code class="language-python">qs.rect(.., color: Color, transform: Transform, z: int)
+</code></pre>
+<blockquote>
+<p>Note:
+The default values are used when the optional arguments are not specified.</p>
+<pre><code>Color: Red
+Transform: Identity
+z: 0
+</code></pre>
+</blockquote>
+<a class="header" href="#shapes" id="shapes"><h3>Shapes</h3></a>
+<a class="header" href="#rectangle" id="rectangle"><h4>Rectangle</h4></a>
+<pre><code class="language-python">qs.rect([Point, [w, h]], ..) # w is the width, h the height
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a blue rectangle with a top-left corner at
+# (100, 100) and a width and height of 32
+qs.rect([[100,100], [32,32]], color=BLUE)
+</code></pre>
+<a class="header" href="#circle" id="circle"><h4>Circle</h4></a>
+<pre><code class="language-python">qs.circ([Point], radius, ..) # radius is required
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a green circle with its center at (400, 300) and a radius of 100
+qs.circ( [400, 300], 100., color=GREEN)
+</code></pre>
+<a class="header" href="#triangle" id="triangle"><h4>Triangle</h4></a>
+<pre><code class="language-python">qs.triangle([Point, Point, Point], ..)
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a red triangle rotated by 45 degrees, and scaled down to half
+qs.triangle([[500, 50], [450, 100], [650, 150]],
+    color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
+</code></pre>
+<a class="header" href="#line" id="line"><h4>Line</h4></a>
+<pre><code class="language-python">qs.line([Point, Point], thickness: int, ..) # thickness is an optional named argument with default=1
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a red line with thickness of 2 pixels and z-height of 5
+qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
+</code></pre>
+<a class="header" href="#assets" id="assets"><h3>Assets</h3></a>
+<p>Sprite draws an image to canvas. Its name must be unique. The image must be initialized in the init lifecycle function.</p>
+<a class="header" href="#sprite" id="sprite"><h4>Sprite</h4></a>
+<pre><code class="language-python">qs.sprite(sprite_name: str, rect=[Point, Point], ..)
+# or
+qs.sprite(sprite_name: str, p0=Point, ..)
+</code></pre>
+<a class="header" href="#animation" id="animation"><h4>Animation</h4></a>
+<pre><code class="language-python">qs.anim(animation_name: str, rect=[Point, Point], ..)
+# or
+qs.anim(animation_name: str, p0=Point, ..)
+</code></pre>
+<p>These functions can be called in two ways:</p>
+<ol>
+<li>rect=[Point, Point]</li>
+</ol>
+<p>Use this to draw your sprite in the box boudned by the rect</p>
+<ol start="2">
+<li>p0=Point</li>
+</ol>
+<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
+<a class="header" href="#sound" id="sound"><h4>Sound</h4></a>
+<p>qs.sound:</p>
+<a class="header" href="#initializers" id="initializers"><h3>initializers</h3></a>
+<ul>
+<li>
+<p>qs.init_sprites</p>
+<p>args: [(name, path)]</p>
+</li>
+</ul>
+<p>qs.init_anims</p>
+<pre><code>args: [(name, path, frame width, frame height, duration(in s))]
+</code></pre>
+<p>qs.init_sounds</p>
+<pre><code>args: [(name, path)]
+</code></pre>
+<pre><code class="language-python">qs.init_sprites([
+    [&quot;crab&quot;, &quot;crab.png&quot;], # name, path
+])
+qs.init_anims([
+    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 36, 27, 1.], # frame width, frame height, duration(in s)
+    [&quot;crab-up&quot;, &quot;crab-up.png&quot;, 36, 27, 1.]
+])
+qs.init_sounds([
+    [&quot;click&quot;, &quot;click.wav&quot;]
+])
+</code></pre>
+<a class="header" href="#misc" id="misc"><h3>misc</h3></a>
+<pre><code>qs.mouse_pos()
+qs.keyboard()
+qs.keyboard_bool()
+qs.mouse_wheel_delta()
+qs.set_view()
+qs.set_update_rate()
+qs.update_rate()
+qs.clear()
+</code></pre>
+<a class="header" href="#example" id="example"><h1>Example:</h1></a>
+<pre><code># Remove any artifacts from the previous frame
+qs.clear(WHITE)
+# Draw a blue rectangle with a top-left corner at (100, 100) and a width and height of 32
+qs.rect([[100,100], [32,32]], color=BLUE)
+# Draw a blue rectangle, rotated by 45 degrees, with a z-height of 10
+qs.rect([[400, 300], [32, 32]], color=BLUE, transform=rotate(45), z=10)
+# Draw a green circle with its center at (400, 300) and a radius of 100
+qs.circ( [400, 300], 100., color=GREEN)
+# Draw a red line with thickness of 2 pixels and z-height of 5
+qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
+# Draw a red triangle rotated by 45 degrees, and scaled down to half
+qs.triangle([[500, 50], [450, 100], [650, 150]], color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../pyckitup/events.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../pyckitup/contribute.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../pyckitup/events.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../pyckitup/contribute.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
