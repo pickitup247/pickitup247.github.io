@@ -3,7 +3,7 @@
 
 ## Events
 
-Event object are dispatched in the `event` lifecycle function:
+Event objects are dispatched in the `event` lifecycle function:
 
 ```python
 def event(state, event):

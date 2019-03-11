@@ -144,11 +144,11 @@
 <ol>
 <li><code>def init() -&gt; State</code></li>
 </ol>
-<p>Initializes all the assets, returns a state object which can be an integer, list, dictionary or object, etc..</p>
+<p>Initializes assets, returns a state object which can be an integer, a list, a dictionary or practically any Python object.</p>
 <ol start="2">
 <li><code>def onload(State) -&gt; None</code></li>
 </ol>
-<p>This function is run exactly once after the window has been created. Used for setting frame rate, getting window size, etc..</p>
+<p>This function is run exactly once after window creation. Can be used for setting frame rate, getting window size, etc..</p>
 <ol start="3">
 <li><code>def update(State) -&gt; None</code></li>
 </ol>
@@ -160,7 +160,7 @@
 <ol start="5">
 <li><code>def event(State, Event) -&gt; None</code></li>
 </ol>
-<p>Event is a dictionary containing the event type and its associated data. For example, mouse up, mouse moved, key up, etc..</p>
+<p>Event is a dictionary containing the event type and its associated data.</p>
 
                     </main>
 

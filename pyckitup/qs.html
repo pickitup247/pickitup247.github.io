@@ -139,26 +139,26 @@
                         <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 <a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#qs-module" id="qs-module"><h2><code>qs</code> module</h2></a>
-<p><code>qs</code> module is the namespace for quicksilver library functions.</p>
+<p><code>qs</code> module is the namespace for quicksilver library functions:</p>
 <ul>
 <li>
-<p>draw functions(shapes, sprite and sprite animation)</p>
+<p>draw(shape, sprite and sprite animation)</p>
 </li>
 <li>
-<p>sounds</p>
+<p>play sound</p>
 </li>
 <li>
-<p>assets initializers</p>
+<p>initialize asset</p>
 </li>
 <li>
-<p>functions to get mouse position etc.</p>
+<p>get mouse position, keyboard state, etc..</p>
 </li>
 </ul>
 <blockquote>
-<p>Note:
-The name comes from the underlying game engine quicksilver.</p>
+<p>The name <code>qs</code> comes from the underlying game framework <code>quicksilver</code>.</p>
 </blockquote>
-<a class="header" href="#types" id="types"><h3>Types:</h3></a>
+<a class="header" href="#pyckitup-types" id="pyckitup-types"><h3>pyckitup Types</h3></a>
+<p>The types in pyckitup are simple Python objects.</p>
 <ul>
 <li>
 <p>Point: A cartesian point represented as a list <code>[x, y]</code>.</p>
@@ -167,7 +167,7 @@ The name comes from the underlying game engine quicksilver.</p>
 <p>Color: Linear RGBA type. It is a list of four floats with range [0., 1.]. Example: <code>BLUE = [0, 0, 1, 1]</code></p>
 </li>
 <li>
-<p>Transform: Transform matrix. a list of lists that represents a 3x3 matrix whose last axis with homogeneous coordinate.</p>
+<p>Transform: 3x3 Transformation matrix. a list of lists that represents a 3x3 matrix with the last being homogeneous coordinate.</p>
 </li>
 </ul>
 <pre><code class="language-python">def rotate(deg):
@@ -190,12 +190,12 @@ def scale(x, y):
 def matmul(X, Y):
     return [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
 </code></pre>
+<a class="header" href="#draw" id="draw"><h3>Draw</h3></a>
 <p>All draw calls have these common optional named arguments:</p>
 <pre><code class="language-python">qs.rect(.., color: Color, transform: Transform, z: int)
 </code></pre>
 <blockquote>
-<p>Note:
-The default values are used when the optional arguments are not specified.</p>
+<p>These are the default values for the optional arguments:</p>
 <pre><code>Color: Red
 Transform: Identity
 z: 0
@@ -203,7 +203,7 @@ z: 0
 </blockquote>
 <a class="header" href="#shapes" id="shapes"><h3>Shapes</h3></a>
 <a class="header" href="#rectangle" id="rectangle"><h4>Rectangle</h4></a>
-<pre><code class="language-python">qs.rect([Point, [w, h]], ..) # w is the width, h the height
+<pre><code class="language-python">qs.rect([Point, [w, h]], ..)
 </code></pre>
 <p>Example:</p>
 <pre><code># Draw a blue rectangle with a top-left corner at
@@ -211,7 +211,7 @@ z: 0
 qs.rect([[100,100], [32,32]], color=BLUE)
 </code></pre>
 <a class="header" href="#circle" id="circle"><h4>Circle</h4></a>
-<pre><code class="language-python">qs.circ([Point], radius, ..) # radius is required
+<pre><code class="language-python">qs.circ([Point], radius: float, ..) # radius is required
 </code></pre>
 <p>Example:</p>
 <pre><code># Draw a green circle with its center at (400, 300) and a radius of 100
@@ -233,7 +233,16 @@ qs.triangle([[500, 50], [450, 100], [650, 150]],
 qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
 </code></pre>
 <a class="header" href="#assets" id="assets"><h3>Assets</h3></a>
-<p>Sprite draws an image to canvas. Its name must be unique. The image must be initialized in the init lifecycle function.</p>
+<p>Sprites are uniquely identified by name and must be initialized in the <code>init</code> lifecycle function.</p>
+<p>Image drawing functions can be called in two ways:</p>
+<ol>
+<li><code>.., rect=[Point, Point], ..</code></li>
+</ol>
+<p>Use this to draw your sprite in the specified bounding rectangle.</p>
+<ol start="2">
+<li><code>.., p0=Point, ..</code></li>
+</ol>
+<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
 <a class="header" href="#sprite" id="sprite"><h4>Sprite</h4></a>
 <pre><code class="language-python">qs.sprite(sprite_name: str, rect=[Point, Point], ..)
 # or
@@ -244,36 +253,26 @@ qs.sprite(sprite_name: str, p0=Point, ..)
 # or
 qs.anim(animation_name: str, p0=Point, ..)
 </code></pre>
-<p>These functions can be called in two ways:</p>
-<ol>
-<li>rect=[Point, Point]</li>
-</ol>
-<p>Use this to draw your sprite in the box boudned by the rect</p>
-<ol start="2">
-<li>p0=Point</li>
-</ol>
-<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
 <a class="header" href="#sound" id="sound"><h4>Sound</h4></a>
-<p>qs.sound:</p>
-<a class="header" href="#initializers" id="initializers"><h3>initializers</h3></a>
-<ul>
-<li>
-<p>qs.init_sprites</p>
-<p>args: [(name, path)]</p>
-</li>
-</ul>
-<p>qs.init_anims</p>
-<pre><code>args: [(name, path, frame width, frame height, duration(in s))]
+<p>Sound is also unique identified by name. This function plays the sound:</p>
+<pre><code>qs.sound(name: str)
 </code></pre>
-<p>qs.init_sounds</p>
+<a class="header" href="#initializers" id="initializers"><h3>Initializers</h3></a>
+<a class="header" href="#sprites" id="sprites"><h4>Sprites</h4></a>
 <pre><code>args: [(name, path)]
 </code></pre>
+<a class="header" href="#sprites-animations" id="sprites-animations"><h4>Sprites Animations</h4></a>
+<pre><code>args: [(name, path, number of frames, duration(in s))]
+</code></pre>
+<a class="header" href="#sounds" id="sounds"><h4>Sounds</h4></a>
+<pre><code>args: [(name, path)]
+</code></pre>
+<p>Example:</p>
 <pre><code class="language-python">qs.init_sprites([
     [&quot;crab&quot;, &quot;crab.png&quot;], # name, path
 ])
 qs.init_anims([
-    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 36, 27, 1.], # frame width, frame height, duration(in s)
-    [&quot;crab-up&quot;, &quot;crab-up.png&quot;, 36, 27, 1.]
+    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 2, 1.], # number of frames, duration(in s)
 ])
 qs.init_sounds([
     [&quot;click&quot;, &quot;click.wav&quot;]
@@ -288,20 +287,6 @@ qs.set_view()
 qs.set_update_rate()
 qs.update_rate()
 qs.clear()
-</code></pre>
-<a class="header" href="#example" id="example"><h1>Example:</h1></a>
-<pre><code># Remove any artifacts from the previous frame
-qs.clear(WHITE)
-# Draw a blue rectangle with a top-left corner at (100, 100) and a width and height of 32
-qs.rect([[100,100], [32,32]], color=BLUE)
-# Draw a blue rectangle, rotated by 45 degrees, with a z-height of 10
-qs.rect([[400, 300], [32, 32]], color=BLUE, transform=rotate(45), z=10)
-# Draw a green circle with its center at (400, 300) and a radius of 100
-qs.circ( [400, 300], 100., color=GREEN)
-# Draw a red line with thickness of 2 pixels and z-height of 5
-qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
-# Draw a red triangle rotated by 45 degrees, and scaled down to half
-qs.triangle([[500, 50], [450, 100], [650, 150]], color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
 </code></pre>
 
                     </main>

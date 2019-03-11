@@ -3,9 +3,9 @@
 
 ## Assets
 
-All assets should be placed in the static folder. There is currently no way to customize the path. Assets include sprites, sprite animations and sounds. Assets must be declared in the init lifecycle function before use. pyckitup will asynchronously load and panic when any asset is not found.
+All assets must be placed in the `static/` folder. Assets may include sprites, sprite animations and sounds. Assets must be declared in the init lifecycle function before use. asset loading is asynchronous and pyckitup will panic if not all assets are loaded.
 
-The asset initializer functions are detailed below.
+The asset initializer functions are detailed in the [qs module](/pyckitup/qs.md#initializers) section.
 
 ## Directory Structure
 

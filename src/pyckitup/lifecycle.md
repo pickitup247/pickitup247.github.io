@@ -9,11 +9,11 @@ The lifecycle of a pyckitup game consists of these functions:
 
 1. `def init() -> State`
 
-Initializes all the assets, returns a state object which can be an integer, list, dictionary or object, etc..
+Initializes assets, returns a state object which can be an integer, a list, a dictionary or practically any Python object.
 
 2. `def onload(State) -> None`
 
-This function is run exactly once after the window has been created. Used for setting frame rate, getting window size, etc..
+This function is run exactly once after window creation. Can be used for setting frame rate, getting window size, etc..
 
 3. `def update(State) -> None`
 
@@ -25,5 +25,4 @@ Draw your game visuals here. In contrast to update function above, there is no o
 
 5. `def event(State, Event) -> None`
 
-Event is a dictionary containing the event type and its associated data. For example, mouse up, mouse moved, key up, etc..
-
+Event is a dictionary containing the event type and its associated data.

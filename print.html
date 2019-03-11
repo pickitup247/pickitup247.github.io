@@ -184,39 +184,20 @@
 <p><img src="/images/exporter.gif" alt="exporter" /></p>
 <a class="header" href="#pre-order" id="pre-order"><h1>Pre-order</h1></a>
 <iframe src="https://www.humblebundle.com/widget/v2/product/xprite-widget/Qrti68mal0?theme=light" width="526" height="263" style="border: none;" scrolling="no" frameborder="0"></iframe><a class="header" href="#pyckitup" id="pyckitup"><h1>pyckitup</h1></a>
+<a class="header" href="#python-game-engine-for-the-web" id="python-game-engine-for-the-web"><h2>Python game engine for the Web.</h2></a>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 <a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <p><img src="/pyckitup/logos/facebook_cover_photo_2.png" alt="logo" /></p>
-<p>Python game engine for the web</p>
-<p><a href="https://github.com/pickitup247/pickitup">Github</a></p>
+<p><a class="github-button" href="https://github.com/pickitup247/pyckitup" data-size="large" data-show-count="true" aria-label="Star pickitup247/pyckitup on GitHub">Star</a></p>
 <a class="header" href="#about" id="about"><h2>About</h2></a>
-<ul>
-<li>
-<p>2D game engine for Python</p>
-</li>
-<li>
-<p>written in <a href="https://www.rust-lang.org/">Rust</a></p>
-</li>
-<li>
-<p>compiles to WebAssembly</p>
-</li>
-<li>
-<p>renders to WebGL</p>
-</li>
-<li>
-<p>single binary distribution</p>
-</li>
-<li>
-<p>no compilation</p>
-</li>
-</ul>
-<a class="header" href="#quickstart" id="quickstart"><h2>Quickstart</h2></a>
+<p>Hi there! pyckitup is a Python game engine you can use to make 2D games. It is free, open source and works on Web, Linux, OS X and Windows.</p>
+<a class="header" href="#getting-started" id="getting-started"><h2>Getting Started</h2></a>
 <ol>
-<li>Download pyckitup binary.</li>
+<li>
+<p>Download pyckitup binary.</p>
+</li>
 </ol>
-<blockquote>
-<p>Currently only linux is supported, OSX and windows should work too but they are untested.</p>
-</blockquote>
 <ul>
 <li>
 <p>Linux: <a href="https://github.com/pickitup247/pyckitup/releases/tag/0.1">download</a></p>
@@ -229,8 +210,9 @@
 </li>
 </ul>
 <ol start="2">
-<li>init</li>
+<li>Initialize game folder</li>
 </ol>
+<p>The folder contains the clock example game.</p>
 <pre><code class="language-bash">pyckitup init hello
 cd hello
 pyckitup
@@ -240,13 +222,15 @@ pyckitup
 <p>Iterate over your game</p>
 </li>
 <li>
-<p>Once you are ready to publish, you can deploy to web with</p>
+<p>Once ready, deploy to web with</p>
 </li>
 </ol>
 <pre><code class="language-bash">pyckitup build
-cd build
-python3 server.py
 </code></pre>
+<p>This creates a <code>build/</code> directory which contains everything you need to deploy your awesome game to the web. Simply copy the folder to where you want it served.</p>
+<a class="header" href="#how-it-works" id="how-it-works"><h2>How it works</h2></a>
+<p>pyckitup is a thin layer glueing RustPython interpreter to quicksilver game engine. It compiles to a single binary on different systems. Native binaries(as opposed to wasm) also come with wasm files.</p>
+<p>When you load a pyckitup game in browser, it loads a single 5MB wasm blob and interprets Python code stored in localStorage. As a result there is a 10MB code size limit.</p>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 <a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#example-clock" id="example-clock"><h1>Example: Clock</h1></a>
@@ -350,11 +334,11 @@ def event(state, event):
 <ol>
 <li><code>def init() -&gt; State</code></li>
 </ol>
-<p>Initializes all the assets, returns a state object which can be an integer, list, dictionary or object, etc..</p>
+<p>Initializes assets, returns a state object which can be an integer, a list, a dictionary or practically any Python object.</p>
 <ol start="2">
 <li><code>def onload(State) -&gt; None</code></li>
 </ol>
-<p>This function is run exactly once after the window has been created. Used for setting frame rate, getting window size, etc..</p>
+<p>This function is run exactly once after window creation. Can be used for setting frame rate, getting window size, etc..</p>
 <ol start="3">
 <li><code>def update(State) -&gt; None</code></li>
 </ol>
@@ -366,12 +350,12 @@ def event(state, event):
 <ol start="5">
 <li><code>def event(State, Event) -&gt; None</code></li>
 </ol>
-<p>Event is a dictionary containing the event type and its associated data. For example, mouse up, mouse moved, key up, etc..</p>
+<p>Event is a dictionary containing the event type and its associated data.</p>
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 <a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#assets" id="assets"><h2>Assets</h2></a>
-<p>All assets should be placed in the static folder. There is currently no way to customize the path. Assets include sprites, sprite animations and sounds. Assets must be declared in the init lifecycle function before use. pyckitup will asynchronously load and panic when any asset is not found.</p>
-<p>The asset initializer functions are detailed below.</p>
+<p>All assets must be placed in the <code>static/</code> folder. Assets may include sprites, sprite animations and sounds. Assets must be declared in the init lifecycle function before use. asset loading is asynchronous and pyckitup will panic if not all assets are loaded.</p>
+<p>The asset initializer functions are detailed in the <a href="/pyckitup/qs.html#initializers">qs module</a> section.</p>
 <a class="header" href="#directory-structure" id="directory-structure"><h2>Directory Structure</h2></a>
 <pre><code>/game
 |-run.py
@@ -384,7 +368,7 @@ def event(state, event):
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 <a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#events" id="events"><h2>Events</h2></a>
-<p>Event object are dispatched in the <code>event</code> lifecycle function:</p>
+<p>Event objects are dispatched in the <code>event</code> lifecycle function:</p>
 <pre><code class="language-python">def event(state, event):
     print(event)
 </code></pre>
@@ -647,26 +631,26 @@ Yen
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
 <a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#qs-module" id="qs-module"><h2><code>qs</code> module</h2></a>
-<p><code>qs</code> module is the namespace for quicksilver library functions.</p>
+<p><code>qs</code> module is the namespace for quicksilver library functions:</p>
 <ul>
 <li>
-<p>draw functions(shapes, sprite and sprite animation)</p>
+<p>draw(shape, sprite and sprite animation)</p>
 </li>
 <li>
-<p>sounds</p>
+<p>play sound</p>
 </li>
 <li>
-<p>assets initializers</p>
+<p>initialize asset</p>
 </li>
 <li>
-<p>functions to get mouse position etc.</p>
+<p>get mouse position, keyboard state, etc..</p>
 </li>
 </ul>
 <blockquote>
-<p>Note:
-The name comes from the underlying game engine quicksilver.</p>
+<p>The name <code>qs</code> comes from the underlying game framework <code>quicksilver</code>.</p>
 </blockquote>
-<a class="header" href="#types" id="types"><h3>Types:</h3></a>
+<a class="header" href="#pyckitup-types" id="pyckitup-types"><h3>pyckitup Types</h3></a>
+<p>The types in pyckitup are simple Python objects.</p>
 <ul>
 <li>
 <p>Point: A cartesian point represented as a list <code>[x, y]</code>.</p>
@@ -675,7 +659,7 @@ The name comes from the underlying game engine quicksilver.</p>
 <p>Color: Linear RGBA type. It is a list of four floats with range [0., 1.]. Example: <code>BLUE = [0, 0, 1, 1]</code></p>
 </li>
 <li>
-<p>Transform: Transform matrix. a list of lists that represents a 3x3 matrix whose last axis with homogeneous coordinate.</p>
+<p>Transform: 3x3 Transformation matrix. a list of lists that represents a 3x3 matrix with the last being homogeneous coordinate.</p>
 </li>
 </ul>
 <pre><code class="language-python">def rotate(deg):
@@ -698,12 +682,12 @@ def scale(x, y):
 def matmul(X, Y):
     return [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
 </code></pre>
+<a class="header" href="#draw" id="draw"><h3>Draw</h3></a>
 <p>All draw calls have these common optional named arguments:</p>
 <pre><code class="language-python">qs.rect(.., color: Color, transform: Transform, z: int)
 </code></pre>
 <blockquote>
-<p>Note:
-The default values are used when the optional arguments are not specified.</p>
+<p>These are the default values for the optional arguments:</p>
 <pre><code>Color: Red
 Transform: Identity
 z: 0
@@ -711,7 +695,7 @@ z: 0
 </blockquote>
 <a class="header" href="#shapes" id="shapes"><h3>Shapes</h3></a>
 <a class="header" href="#rectangle" id="rectangle"><h4>Rectangle</h4></a>
-<pre><code class="language-python">qs.rect([Point, [w, h]], ..) # w is the width, h the height
+<pre><code class="language-python">qs.rect([Point, [w, h]], ..)
 </code></pre>
 <p>Example:</p>
 <pre><code># Draw a blue rectangle with a top-left corner at
@@ -719,7 +703,7 @@ z: 0
 qs.rect([[100,100], [32,32]], color=BLUE)
 </code></pre>
 <a class="header" href="#circle" id="circle"><h4>Circle</h4></a>
-<pre><code class="language-python">qs.circ([Point], radius, ..) # radius is required
+<pre><code class="language-python">qs.circ([Point], radius: float, ..) # radius is required
 </code></pre>
 <p>Example:</p>
 <pre><code># Draw a green circle with its center at (400, 300) and a radius of 100
@@ -741,7 +725,16 @@ qs.triangle([[500, 50], [450, 100], [650, 150]],
 qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
 </code></pre>
 <a class="header" href="#assets-1" id="assets-1"><h3>Assets</h3></a>
-<p>Sprite draws an image to canvas. Its name must be unique. The image must be initialized in the init lifecycle function.</p>
+<p>Sprites are uniquely identified by name and must be initialized in the <code>init</code> lifecycle function.</p>
+<p>Image drawing functions can be called in two ways:</p>
+<ol>
+<li><code>.., rect=[Point, Point], ..</code></li>
+</ol>
+<p>Use this to draw your sprite in the specified bounding rectangle.</p>
+<ol start="2">
+<li><code>.., p0=Point, ..</code></li>
+</ol>
+<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
 <a class="header" href="#sprite" id="sprite"><h4>Sprite</h4></a>
 <pre><code class="language-python">qs.sprite(sprite_name: str, rect=[Point, Point], ..)
 # or
@@ -752,36 +745,26 @@ qs.sprite(sprite_name: str, p0=Point, ..)
 # or
 qs.anim(animation_name: str, p0=Point, ..)
 </code></pre>
-<p>These functions can be called in two ways:</p>
-<ol>
-<li>rect=[Point, Point]</li>
-</ol>
-<p>Use this to draw your sprite in the box boudned by the rect</p>
-<ol start="2">
-<li>p0=Point</li>
-</ol>
-<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
 <a class="header" href="#sound" id="sound"><h4>Sound</h4></a>
-<p>qs.sound:</p>
-<a class="header" href="#initializers" id="initializers"><h3>initializers</h3></a>
-<ul>
-<li>
-<p>qs.init_sprites</p>
-<p>args: [(name, path)]</p>
-</li>
-</ul>
-<p>qs.init_anims</p>
-<pre><code>args: [(name, path, frame width, frame height, duration(in s))]
+<p>Sound is also unique identified by name. This function plays the sound:</p>
+<pre><code>qs.sound(name: str)
 </code></pre>
-<p>qs.init_sounds</p>
+<a class="header" href="#initializers" id="initializers"><h3>Initializers</h3></a>
+<a class="header" href="#sprites" id="sprites"><h4>Sprites</h4></a>
 <pre><code>args: [(name, path)]
 </code></pre>
+<a class="header" href="#sprites-animations" id="sprites-animations"><h4>Sprites Animations</h4></a>
+<pre><code>args: [(name, path, number of frames, duration(in s))]
+</code></pre>
+<a class="header" href="#sounds" id="sounds"><h4>Sounds</h4></a>
+<pre><code>args: [(name, path)]
+</code></pre>
+<p>Example:</p>
 <pre><code class="language-python">qs.init_sprites([
     [&quot;crab&quot;, &quot;crab.png&quot;], # name, path
 ])
 qs.init_anims([
-    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 36, 27, 1.], # frame width, frame height, duration(in s)
-    [&quot;crab-up&quot;, &quot;crab-up.png&quot;, 36, 27, 1.]
+    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 2, 1.], # number of frames, duration(in s)
 ])
 qs.init_sounds([
     [&quot;click&quot;, &quot;click.wav&quot;]
@@ -797,20 +780,8 @@ qs.set_update_rate()
 qs.update_rate()
 qs.clear()
 </code></pre>
-<a class="header" href="#example" id="example"><h1>Example:</h1></a>
-<pre><code># Remove any artifacts from the previous frame
-qs.clear(WHITE)
-# Draw a blue rectangle with a top-left corner at (100, 100) and a width and height of 32
-qs.rect([[100,100], [32,32]], color=BLUE)
-# Draw a blue rectangle, rotated by 45 degrees, with a z-height of 10
-qs.rect([[400, 300], [32, 32]], color=BLUE, transform=rotate(45), z=10)
-# Draw a green circle with its center at (400, 300) and a radius of 100
-qs.circ( [400, 300], 100., color=GREEN)
-# Draw a red line with thickness of 2 pixels and z-height of 5
-qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
-# Draw a red triangle rotated by 45 degrees, and scaled down to half
-qs.triangle([[500, 50], [450, 100], [650, 150]], color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
-</code></pre>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#contributing" id="contributing"><h1>Contributing</h1></a>
 <p>pyckitup mainly uses <a href="https://rustpython.github.io/website/rustpython_vm/index.html">RustPython</a> and <a href="https://github.com/ryanisaacg/quicksilver">quicksilver</a> to do all the heavy lifting. Most of pyckitup is glue between these two crates.</p>
 <p>Quicksilver supports both native and web backends so the idea is to include a python interpreter and glue the game loop to Python functions.</p>
@@ -829,6 +800,8 @@ qs.triangle([[500, 50], [450, 100], [650, 150]], color=RED, transform=matmul(rot
 <p>Finally, compile native binary which includes the wasm binary for deployment.</p>
 <pre><code>cargo build --release
 </code></pre>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a></p>
 <a class="header" href="#todo" id="todo"><h1>TODO</h1></a>
 <p>[ ] Implement font rendering.</p>
 <a class="header" href="#contact" id="contact"><h1>Contact</h1></a>
