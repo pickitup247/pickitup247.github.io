@@ -28,7 +28,12 @@
 
 1. Download pyckitup binary.
 
-TODO: add links.
+> Currently only linux is supported, OSX and windows should work too but it's untested.
+
+Linux: [download](https://github.com/pickitup247/pyckitup/releases/tag/0.1)
+
+Windows: [build instructions](./pyckitup/contribute.md)
+OS X: [build instructions](./pyckitup/contribute.md)
 
 2. init
 
