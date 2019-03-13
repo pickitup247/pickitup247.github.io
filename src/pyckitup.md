@@ -50,6 +50,4 @@ This creates a `build/` directory which contains everything you need to deploy y
 
 ## How it works
 
-pyckitup is a thin layer glueing RustPython interpreter to quicksilver game engine. It compiles to a single binary on different systems. Native binaries(as opposed to wasm) also come with wasm files.
-
-When you load a pyckitup game in browser, it loads a single 5MB wasm blob and interprets Python code stored in localStorage. As a result there is a 10MB code size limit.
+pyckitup is a thin layer glueing RustPython interpreter to quicksilver game engine. When you load a pyckitup game in browser, it loads a single 5MB wasm blob and interprets Python code stored in localStorage. As a result there is a 10MB code size limit.
