@@ -8,7 +8,7 @@ pyckitup mainly uses [RustPython](https://rustpython.github.io/website/rustpytho
 Quicksilver supports both native and web backends so the idea is to include a python interpreter and glue the game loop to Python functions.
 
 ```bash
-cargo install cargo-web --force
+cargo install cargo-web --git https://github.com/rickyhan/cargo-web --force
 # git clone https://github.com/rickyhan/RustPython
 git clone git@github.com:pickitup247/pyckitup.git
 cd pyckitup

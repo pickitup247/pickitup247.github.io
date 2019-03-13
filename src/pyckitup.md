@@ -38,7 +38,7 @@ cd hello
 pyckitup
 ```
 
-3. Iterate over your game
+3. Iterate on your game
 
 4. Once ready, deploy to web with
 
