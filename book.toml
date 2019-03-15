@@ -3,3 +3,6 @@ authors = ["ricky han"]
 multilingual = false
 src = "src"
 title = "pickitup247"
+
+[output.html]
+google-analytics = "UA-98721585-2"
