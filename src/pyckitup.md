@@ -24,9 +24,9 @@ Hi there! pyckitup is a Python game engine you can use to make 2D games. It is f
 
 * Linux: [download](https://github.com/pickitup247/pyckitup/releases/tag/0.1)
 
-* Windows: [build instructions](./pyckitup/contribute.md)
+* Windows: [download](https://github.com/pickitup247/pyckitup/releases/tag/0.1)
 
-* OS X: [build instructions](./pyckitup/contribute.md)
+* OS X: Currently unavailable, [build instructions](./pyckitup/contribute.md)
 
 2. Initialize game folder
 
