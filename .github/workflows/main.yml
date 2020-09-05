@@ -27,3 +27,11 @@ jobs:
           # The mdBook version to download (if necessary) and use. Example: 0.3.5
           mdbook-version: latest
 
+      - run: mdbook build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
+
