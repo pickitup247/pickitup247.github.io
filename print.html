@@ -1,0 +1,900 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>pickitup247</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="xprite.html"><strong aria-hidden="true">1.</strong> Xprite</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="xprite/xprite-about.html"><strong aria-hidden="true">1.1.</strong> About</a></li><li class="chapter-item expanded "><a href="xprite/xprite-features.html"><strong aria-hidden="true">1.2.</strong> Features</a></li><li class="chapter-item expanded "><a href="xprite/xprite-order.html"><strong aria-hidden="true">1.3.</strong> Preorder</a></li></ol></li><li class="chapter-item expanded "><a href="pyckitup.html"><strong aria-hidden="true">2.</strong> Pyckitup</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="pyckitup/clock.html"><strong aria-hidden="true">2.1.</strong> Example: Clock</a></li><li class="chapter-item expanded "><a href="pyckitup/color.html"><strong aria-hidden="true">2.2.</strong> Example: Color</a></li><li class="chapter-item expanded "><a href="pyckitup/lifecycle.html"><strong aria-hidden="true">2.3.</strong> Lifecycle</a></li><li class="chapter-item expanded "><a href="pyckitup/assets.html"><strong aria-hidden="true">2.4.</strong> Assets</a></li><li class="chapter-item expanded "><a href="pyckitup/events.html"><strong aria-hidden="true">2.5.</strong> Events</a></li><li class="chapter-item expanded "><a href="pyckitup/qs.html"><strong aria-hidden="true">2.6.</strong> qs module</a></li><li class="chapter-item expanded "><a href="pyckitup/contribute.html"><strong aria-hidden="true">2.7.</strong> Contribute</a></li><li class="chapter-item expanded "><a href="pyckitup/todo.html"><strong aria-hidden="true">2.8.</strong> TODO</a></li></ol></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">3.</strong> Contact</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">pickitup247</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#xprite-pixel-art-editor" id="xprite-pixel-art-editor">Xprite Pixel Art Editor</a></h1>
+<p><img src="/static/facebook_cover_photo_2.png" alt="logo" /></p>
+<h2><a class="header" href="#simplify-your-pixel-art-workflow" id="simplify-your-pixel-art-workflow">Simplify your pixel art workflow.</a></h2>
+<blockquote>
+<p>Xprite is a pixel art editor designed for artists, game designers and programmers.</p>
+</blockquote>
+<h2><a class="header" href="#xprite-is-under-heavy-development-currently-a-beta-build-is-available-for-a-discount-dont-miss-out-while-its-still-cheap-" id="xprite-is-under-heavy-development-currently-a-beta-build-is-available-for-a-discount-dont-miss-out-while-its-still-cheap-">Xprite is under heavy development. Currently, a beta build is available for a discount. Don't miss out while it's still cheap :)</a></h2>
+<p><img src="/images/gif.gif" alt="front" /></p>
+<h1><a class="header" href="#a-hrefxpritehtmlmore-info-a" id="a-hrefxpritehtmlmore-info-a"><a href="/xprite.html">More info &gt;&gt;</a></a></h1>
+<h1><a class="header" href="#xprite" id="xprite">Xprite</a></h1>
+<h2><a class="header" href="#goal" id="goal">Goal</a></h2>
+<p>The mission of Xprite is to make drawing correct pixels less painful, so you can focus on creating art. We invented lots of algorithmic tools specifically for pixel art. If you think it's missing a feature, feel free to email us your requests.</p>
+<h2><a class="header" href="#development" id="development">Development</a></h2>
+<blockquote>
+<p>After 6 months of coding, Xprite is finally ready for release. There are still a few bugs left to fix and features to build. Place an order now to support development:</p>
+<h1><a class="header" href="#a-hrefxpritexprite-orderhtmlpreorder-nowa" id="a-hrefxpritexprite-orderhtmlpreorder-nowa"><a href="xprite/./xprite-order.html">Preorder now</a></a></h1>
+</blockquote>
+<h2><a class="header" href="#wanted-xprite-art" id="wanted-xprite-art">Wanted: Xprite Art</a></h2>
+<p>Finally, we are looking for a spectacular piece of pixel art created with Xprite to feature on the splash screen everytime Xprite boots up. Feel free to email us your best work.</p>
+<h2><a class="header" href="#feedback" id="feedback">Feedback</a></h2>
+<p>We are always happy to receive feedback from users, feel free to <a href="xprite//contact.html">contact us</a>.</p>
+<h1><a class="header" href="#features" id="features">Features</a></h1>
+<h2><a class="header" href="#autoshade" id="autoshade">Autoshade</a></h2>
+<p>Easily color your contour to achieve 3d light effect.</p>
+<p><img src="xprite//images/autoshade.gif" alt="autoshade" /></p>
+<h2><a class="header" href="#symmetry" id="symmetry">Symmetry</a></h2>
+<p>Create symmetric patterns with fine-grained control.</p>
+<p>Also, Xprite supports rotational symmetry.</p>
+<p><img src="xprite//images/symmetry.gif" alt="symmetry" /></p>
+<h2><a class="header" href="#eight-way-connected-floodfill" id="eight-way-connected-floodfill">Eight-way connected floodfill</a></h2>
+<p>This allows recoloring thin lines.</p>
+<p><img src="xprite//images/8way.gif" alt="8way" /></p>
+<h2><a class="header" href="#texture-generator" id="texture-generator">Texture Generator</a></h2>
+<p>Uses wave function collapse algorithm to automatically generate intricate pixel patterns.</p>
+<p><img src="xprite//images/wfc.gif" alt="wfc" />
+<img src="xprite//images/wfc2.gif" alt="wfc2" /></p>
+<h2><a class="header" href="#outline-tool" id="outline-tool">Outline tool</a></h2>
+<p>Outline your color blobs to achieve a cartoonish effect.</p>
+<p><img src="xprite//images/outline.gif" alt="outline" /></p>
+<h2><a class="header" href="#bezier-curves" id="bezier-curves">Bezier Curves</a></h2>
+<p>Draw smooth curves by sorting monotonic curves by segment slope.</p>
+<p><img src="xprite//images/bezier.gif" alt="bezier" /></p>
+<h2><a class="header" href="#layer-exporter" id="layer-exporter">Layer Exporter</a></h2>
+<p>Save each layer to a separate file.</p>
+<p>Available formats: PNG, JPG, Twitter PNG, Aseprite, PSD.</p>
+<p><img src="xprite//images/exporter.gif" alt="exporter" /></p>
+<h1><a class="header" href="#pre-order" id="pre-order">Pre-order</a></h1>
+<iframe src="https://www.humblebundle.com/widget/v2/product/xprite-widget/Qrti68mal0?theme=light" width="526" height="263" style="border: none;" scrolling="no" frameborder="0"></iframe><h1><a class="header" href="#pyckitup" id="pyckitup">pyckitup</a></h1>
+<h2><a class="header" href="#python-game-engine-for-the-web" id="python-game-engine-for-the-web">Python game engine for the Web.</a></h2>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<p><img src="/pyckitup/logos/facebook_cover_photo_2.png" alt="logo" /></p>
+<p><a class="github-button" href="https://github.com/pickitup247/pyckitup" data-size="large" data-show-count="true" aria-label="Star pickitup247/pyckitup on GitHub">Star</a></p>
+<h2><a class="header" href="#about" id="about">About</a></h2>
+<p>Hi there! pyckitup is a Python game engine you can use to make 2D games. It is free, open source and works on Web, Linux, OS X and Windows.</p>
+<h2><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h2>
+<ol>
+<li>Download pyckitup binary.</li>
+</ol>
+<ul>
+<li>
+<p>Linux: <a href="https://github.com/pickitup247/pyckitup/releases/tag/0.1">download</a></p>
+</li>
+<li>
+<p>Windows: <a href="https://github.com/pickitup247/pyckitup/releases/tag/0.1">download</a></p>
+</li>
+<li>
+<p>OS X: Currently unavailable, <a href="./pyckitup/contribute.html">build instructions</a></p>
+</li>
+</ul>
+<ol start="2">
+<li>Initialize game folder</li>
+</ol>
+<p>The folder contains the clock example game.</p>
+<pre><code class="language-bash">pyckitup init hello
+cd hello
+pyckitup
+</code></pre>
+<ol start="3">
+<li>
+<p>Iterate on your game</p>
+</li>
+<li>
+<p>Once ready, deploy to web with</p>
+</li>
+</ol>
+<pre><code class="language-bash">pyckitup build
+</code></pre>
+<p>This creates a <code>build/</code> directory which contains everything you need to deploy your awesome game to the web. Simply copy the folder to where you want it served.</p>
+<h2><a class="header" href="#how-it-works" id="how-it-works">How it works</a></h2>
+<p>pyckitup is a thin layer glueing RustPython interpreter to quicksilver game engine. When you load a pyckitup game in browser, it loads a single 5MB wasm blob and interprets Python code stored in localStorage. As a result there is a 10MB code size limit.</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h1><a class="header" href="#example-clock" id="example-clock">Example: Clock</a></h1>
+<iframe src="https://pickitup247.com/clock/" width="800" height="600"></iframe>
+<p>Source code:</p>
+<pre><code class="language-python">import qs
+from common import *
+
+def init():
+    qs.init_sounds([ [&quot;click&quot;, &quot;click.wav&quot;] ])
+    return {
+        &quot;elapsed&quot;: 0,
+        &quot;hours&quot;: 0,
+        &quot;minutes&quot;: 0,
+        &quot;seconds&quot;: 0,
+    }
+
+def onload(_):
+    qs.set_update_rate(1000)
+
+def update(state):
+    state[&quot;elapsed&quot;] += qs.update_rate()
+    elapsed = state[&quot;elapsed&quot;]
+    state[&quot;seconds&quot;] = (elapsed / 1000.) % 60.
+    state[&quot;minutes&quot;] = ((elapsed / 1000.) / 60.) % 60.
+    state[&quot;hours&quot;] = ((elapsed / 1000.) / 60. / 24.) % 24.
+
+    qs.sound(&quot;click&quot;)
+
+def draw(state):
+    qs.clear(WHITE)
+
+    # draw the frame
+    qs.circ([400, 300], 203, color=BLACK)
+    qs.circ([400, 300], 200, color=WHITE)
+    # draw the hour markers
+    for i in range(1, 13):
+        angle = 360. * ((i + 9.) * 2. / 24.)
+        rad = angle * 3.14 / 180
+        pos = [ math.sin(rad) * 200. + 400., math.cos(rad) * 200. + 300. ]
+        qs.line([[400, 300], pos], thickness=5, color=BLACK)
+    qs.circ([400, 300], 180, color=WHITE)
+
+    hour_angle = 360. * ((state[&quot;hours&quot;] + 9.) * 2. / 24.) * 3.14 / 180
+    minute_angle = 360. * ((state[&quot;minutes&quot;] + 45.) / 60.) * 3.14 / 180
+    second_angle = 360. * ((state[&quot;seconds&quot;] + 45.) / 60.) * 3.14 / 180
+
+    hour_pos =   [math.cos(hour_angle  ) * 150. + 400, math.sin(hour_angle)* 150 + 300]
+    min_pos =    [math.cos(minute_angle) * 180. + 400, math.sin(minute_angle) * 180+ 300]
+    second_pos = [math.cos(second_angle) * 180. + 400, math.sin(second_angle) * 180. + 300]
+
+    qs.line([[400, 300], hour_pos], thickness=10, color=BLACK)
+    qs.line([[400, 300], min_pos], thickness=5, color=BLUE)
+    qs.line([[400, 300], second_pos], thickness=3, color=RED)
+</code></pre>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h1><a class="header" href="#example-color" id="example-color">Example: Color</a></h1>
+<iframe src="https://pickitup247.com/color/" width="800" height="600"></iframe>
+<p>Source code:</p>
+<pre><code class="language-python">import qs
+from common import *
+
+def init():
+    qs.init_anims([
+        # name, path, nframes, duration(s)
+        [&quot;crab-up&quot;, &quot;crab-up.png&quot;, 2, 1.],
+    ])
+    return {
+        &quot;p0&quot;: [1., 1.],
+        &quot;p1&quot;: [100., 100.],
+        &quot;color&quot;: [0,0,0,1],
+    }
+
+def update(state):
+    state[&quot;p0&quot;][0] += 0.3
+    state[&quot;p0&quot;][1] += 0.3
+
+    state[&quot;color&quot;][0] += 0.001
+    state[&quot;color&quot;][1] += 0.002
+    state[&quot;color&quot;][2] += 0.003
+    state[&quot;color&quot;][0] %= 1
+    state[&quot;color&quot;][1] %= 1
+    state[&quot;color&quot;][2] %= 1
+
+
+def draw(state):
+    qs.clear(state[&quot;color&quot;])
+    qs.anim(&quot;crab-up&quot;, rect=[state[&quot;p0&quot;], state[&quot;p1&quot;]])
+
+def event(state, event):
+    if event[&quot;event&quot;] == &quot;mouse_moved&quot;:
+        state[&quot;p0&quot;][0] = event[&quot;x&quot;]
+        state[&quot;p0&quot;][1] = event[&quot;y&quot;]
+</code></pre>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h2><a class="header" href="#api" id="api">API</a></h2>
+<h3><a class="header" href="#lifecycle-functions" id="lifecycle-functions">Lifecycle functions</a></h3>
+<p>The lifecycle of a pyckitup game consists of these functions:</p>
+<ol>
+<li><code>def init() -&gt; State</code></li>
+</ol>
+<p>Initializes assets, returns a state object which can be an integer, a list, a dictionary or practically any Python object.</p>
+<ol start="2">
+<li><code>def onload(State) -&gt; None</code></li>
+</ol>
+<p>This function is run exactly once after window creation. Can be used for setting frame rate, getting window size, etc..</p>
+<ol start="3">
+<li><code>def update(State) -&gt; None</code></li>
+</ol>
+<p>This function is guaranteeed to run once per frame.</p>
+<ol start="4">
+<li><code>def draw(State) -&gt; None</code></li>
+</ol>
+<p>Draw your game visuals here. In contrast to update function above, there is no once-per-frame guarantee.</p>
+<ol start="5">
+<li><code>def event(State, Event) -&gt; None</code></li>
+</ol>
+<p>Event is a dictionary containing the event type and its associated data.</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h2><a class="header" href="#assets" id="assets">Assets</a></h2>
+<p>All assets must be placed in the <code>static/</code> folder. Assets may include sprites, sprite animations and sounds. Assets must be declared in the init lifecycle function before use. asset loading is asynchronous and pyckitup will panic if not all assets are loaded.</p>
+<p>The asset initializer functions are detailed in the <a href="pyckitup//pyckitup/qs.html#initializers">qs module</a> section.</p>
+<h2><a class="header" href="#directory-structure" id="directory-structure">Directory Structure</a></h2>
+<pre><code>/game
+|-run.py
+|-module.py
+|-/static        &lt;- place your assets here
+| |-sprite.png
+| |-anim.png
+| |-sound.wav
+</code></pre>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h2><a class="header" href="#events" id="events">Events</a></h2>
+<p>Event objects are dispatched in the <code>event</code> lifecycle function:</p>
+<pre><code class="language-python">def event(state, event):
+    print(event)
+</code></pre>
+<ul>
+<li>Closed</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;closed&quot;
+}
+</code></pre>
+<ul>
+<li>Focused</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;focused&quot;
+}
+</code></pre>
+<ul>
+<li>Unfocused</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;unfocused&quot;
+}
+</code></pre>
+<ul>
+<li>Key</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;key&quot;,
+    &quot;key&quot;: &quot;A&quot;,
+    &quot;state&quot;: &quot;Pressed&quot;
+}
+</code></pre>
+<ul>
+<li>Typed</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;typed&quot;,
+    &quot;char&quot;: &quot;A&quot;
+}
+</code></pre>
+<ul>
+<li>MouseMoved</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_moved&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0
+}
+</code></pre>
+<ul>
+<li>MouseEntered</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_entered&quot;
+}
+</code></pre>
+<ul>
+<li>MouseExited</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_exited&quot;
+}
+</code></pre>
+<ul>
+<li>MouseWheel</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_wheel&quot;,
+    &quot;x&quot;: 0,
+    &quot;y&quot;: 0
+}
+</code></pre>
+<ul>
+<li>MouseButton</li>
+</ul>
+<pre><code class="language-python">{
+    &quot;event&quot;: &quot;mouse_button&quot;,
+    &quot;button&quot;: &quot;Left&quot;,
+    &quot;state&quot;: &quot;Pressed&quot;
+}
+</code></pre>
+<h3><a class="header" href="#buttons" id="buttons">Buttons</a></h3>
+<pre><code>Key1
+Key2
+Key3
+Key4
+Key5
+Key6
+Key7
+Key8
+Key9
+Key0
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+Escape
+F1
+F2
+F3
+F4
+F5
+F6
+F7
+F8
+F9
+F10
+F11
+F12
+F13
+F14
+F15
+F16
+F17
+F18
+F19
+F20
+F21
+F22
+F23
+F24
+Snapshot
+Scroll
+Pause
+Insert
+Home
+Delete
+End
+PageDown
+PageUp
+Left
+Up
+Right
+Down
+Back
+Return
+Space
+Compose
+Caret
+Numlock
+Numpad0
+Numpad1
+Numpad2
+Numpad3
+Numpad4
+Numpad5
+Numpad6
+Numpad7
+Numpad8
+Numpad9
+AbntC1
+AbntC2
+Add
+Apostrophe
+Apps
+At
+Ax
+Backslash
+Calculator
+Capital
+Colon
+Comma
+Convert
+Decimal
+Divide
+Equals
+Grave
+Kana
+Kanji
+LAlt
+LBracket
+LControl
+LShift
+LWin
+Mail
+MediaSelect
+MediaStop
+Minus
+Multiply
+Mute
+MyComputer
+NavigateForward
+NavigateBackward
+NextTrack
+NoConvert
+NumpadComma
+NumpadEnter
+NumpadEquals
+OEM102
+Period
+PlayPause
+Power
+PrevTrack
+RAlt
+RBracket
+RControl
+RShift
+RWin
+Semicolon
+Slash
+Sleep
+Stop
+Subtract
+Sysrq
+Tab
+Underline
+Unlabeled
+VolumeDown
+VolumeUp
+Wake
+WebBack
+WebFavorites
+WebForward
+WebHome
+WebRefresh
+WebSearch
+WebStop
+Yen
+</code></pre>
+<h3><a class="header" href="#buttonstate" id="buttonstate">ButtonState</a></h3>
+<ul>
+<li>Pressed</li>
+</ul>
+<p>The button was activated this frame</p>
+<ul>
+<li>Held</li>
+</ul>
+<p>The button is active but was not activated this frame</p>
+<ul>
+<li>Released</li>
+</ul>
+<p>The button was released this frame</p>
+<ul>
+<li>NotPressed</li>
+</ul>
+<p>The button is not active but was not released this frame</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h2><a class="header" href="#qs-module" id="qs-module"><code>qs</code> module</a></h2>
+<p><code>qs</code> module is the namespace for quicksilver library functions:</p>
+<ul>
+<li>
+<p>draw(shape, sprite and sprite animation)</p>
+</li>
+<li>
+<p>play sound</p>
+</li>
+<li>
+<p>initialize asset</p>
+</li>
+<li>
+<p>get mouse position, keyboard state, etc..</p>
+</li>
+</ul>
+<blockquote>
+<p>The name <code>qs</code> comes from the underlying game framework <code>quicksilver</code>.</p>
+</blockquote>
+<h3><a class="header" href="#pyckitup-types" id="pyckitup-types">pyckitup Types</a></h3>
+<p>The types in pyckitup are simple Python objects.</p>
+<ul>
+<li>
+<p>Point: A cartesian point represented as a list <code>[x, y]</code>.</p>
+</li>
+<li>
+<p>Color: Linear RGBA type. It is a list of four floats with range [0., 1.]. Example: <code>BLUE = [0, 0, 1, 1]</code></p>
+</li>
+<li>
+<p>Transform: 3x3 Transformation matrix. a list of lists that represents a 3x3 matrix with the last being homogeneous coordinate.</p>
+</li>
+</ul>
+<pre><code class="language-python">def rotate(deg):
+    theta = deg * 3.14 / 180.
+    c = math.cos(theta)
+    s = math.sin(theta)
+    return [
+        [c,-s, 0],
+        [s, c, 0],
+        [0, 0, 1]
+    ]
+
+def scale(x, y):
+    return [
+        [x, 0, 0],
+        [0, y, 0],
+        [0, 0, 1]
+    ]
+
+def matmul(X, Y):
+    return [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
+</code></pre>
+<h3><a class="header" href="#draw" id="draw">Draw</a></h3>
+<p>All draw calls have these common optional named arguments:</p>
+<pre><code class="language-python">qs.rect(.., color: Color, transform: Transform, z: int)
+</code></pre>
+<blockquote>
+<p>These are the default values for the optional arguments:</p>
+<pre><code>Color: Red
+Transform: Identity
+z: 0
+</code></pre>
+</blockquote>
+<h3><a class="header" href="#shapes" id="shapes">Shapes</a></h3>
+<h4><a class="header" href="#rectangle" id="rectangle">Rectangle</a></h4>
+<pre><code class="language-python">qs.rect([Point, [w, h]], ..)
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a blue rectangle with a top-left corner at
+# (100, 100) and a width and height of 32
+qs.rect([[100,100], [32,32]], color=BLUE)
+</code></pre>
+<h4><a class="header" href="#circle" id="circle">Circle</a></h4>
+<pre><code class="language-python">qs.circ([Point], radius: float, ..) # radius is required
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a green circle with its center at (400, 300) and a radius of 100
+qs.circ( [400, 300], 100., color=GREEN)
+</code></pre>
+<h4><a class="header" href="#triangle" id="triangle">Triangle</a></h4>
+<pre><code class="language-python">qs.triangle([Point, Point, Point], ..)
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a red triangle rotated by 45 degrees, and scaled down to half
+qs.triangle([[500, 50], [450, 100], [650, 150]],
+    color=RED, transform=matmul(rotate(45), scale(0.5, 0.5)), z=0)
+</code></pre>
+<h4><a class="header" href="#line" id="line">Line</a></h4>
+<pre><code class="language-python">qs.line([Point, Point], thickness: int, ..) # thickness is an optional named argument with default=1
+</code></pre>
+<p>Example:</p>
+<pre><code># Draw a red line with thickness of 2 pixels and z-height of 5
+qs.line([[50, 80], [600, 450]], thickness=2., color=RED, z=5)
+</code></pre>
+<h3><a class="header" href="#assets-1" id="assets-1">Assets</a></h3>
+<p>Sprites are uniquely identified by name and must be initialized in the <code>init</code> lifecycle function.</p>
+<p>Image drawing functions can be called in two ways:</p>
+<ol>
+<li><code>.., rect=[Point, Point], ..</code></li>
+</ol>
+<p>Use this to draw your sprite in the specified bounding rectangle.</p>
+<ol start="2">
+<li><code>.., p0=Point, ..</code></li>
+</ol>
+<p>Align the top left corner of the sprite with p0 and leave width and height unchanged.</p>
+<h4><a class="header" href="#sprite" id="sprite">Sprite</a></h4>
+<pre><code class="language-python">qs.sprite(sprite_name: str, rect=[Point, Point], ..)
+# or
+qs.sprite(sprite_name: str, p0=Point, ..)
+</code></pre>
+<h4><a class="header" href="#animation" id="animation">Animation</a></h4>
+<pre><code class="language-python">qs.anim(animation_name: str, rect=[Point, Point], ..)
+# or
+qs.anim(animation_name: str, p0=Point, ..)
+</code></pre>
+<h4><a class="header" href="#sound" id="sound">Sound</a></h4>
+<p>Sound is also unique identified by name. This function plays the sound:</p>
+<pre><code>qs.sound(name: str)
+</code></pre>
+<h3><a class="header" href="#initializers" id="initializers">Initializers</a></h3>
+<h4><a class="header" href="#sprites" id="sprites">Sprites</a></h4>
+<pre><code>args: [(name, path)]
+</code></pre>
+<h4><a class="header" href="#sprites-animations" id="sprites-animations">Sprites Animations</a></h4>
+<pre><code>args: [(name, path, number of frames, duration(in s))]
+</code></pre>
+<h4><a class="header" href="#sounds" id="sounds">Sounds</a></h4>
+<pre><code>args: [(name, path)]
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-python">qs.init_sprites([
+    [&quot;crab&quot;, &quot;crab.png&quot;], # name, path
+])
+qs.init_anims([
+    [&quot;crab-left&quot;, &quot;crab-left.png&quot;, 2, 1.], # number of frames, duration(in s)
+])
+qs.init_sounds([
+    [&quot;click&quot;, &quot;click.wav&quot;]
+])
+</code></pre>
+<h3><a class="header" href="#misc" id="misc">misc</a></h3>
+<pre><code>qs.mouse_pos()
+qs.keyboard()
+qs.keyboard_bool()
+qs.mouse_wheel_delta()
+qs.set_view()
+qs.set_update_rate()
+qs.update_rate()
+qs.clear()
+</code></pre>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h1><a class="header" href="#contributing" id="contributing">Contributing</a></h1>
+<p>pyckitup mainly uses <a href="https://rustpython.github.io/website/rustpython_vm/index.html">RustPython</a> and <a href="https://github.com/ryanisaacg/quicksilver">quicksilver</a> to do all the heavy lifting. Most of pyckitup is glue between these two crates.</p>
+<p>Quicksilver supports both native and web backends so the idea is to include a python interpreter and glue the game loop to Python functions.</p>
+<pre><code class="language-bash">cargo install cargo-web --git https://github.com/rickyhan/cargo-web --force
+# git clone https://github.com/rickyhan/RustPython
+git clone git@github.com:pickitup247/pyckitup.git
+cd pyckitup
+cargo web deploy --release
+cargo build --release
+</code></pre>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.2/gh-fork-ribbon.min.css" />
+<a class="github-fork-ribbon right-bottom fixed" href="http://github.com/pickitup247/pyckitup" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+<h1><a class="header" href="#todo" id="todo">TODO</a></h1>
+<p>[ ] Implement font rendering.</p>
+<h1><a class="header" href="#contact" id="contact">Contact</a></h1>
+<p>Please email me at <a href="mailto:pickitup247@rickyhan.com">pickitup247@rickyhan.com</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-98721585-2', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
