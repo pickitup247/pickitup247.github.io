@@ -3,7 +3,6 @@
 - [Xprite](./xprite.md)
     - [About](./xprite/xprite-about.md)
     - [Features](./xprite/xprite-features.md)
-    - [Preorder](./xprite/xprite-order.md)
 - [Pyckitup](./pyckitup.md)
     - [Example: Clock](./pyckitup/clock.md)
     - [Example: Color](./pyckitup/color.md)
@@ -12,5 +11,4 @@
     - [Events](./pyckitup/events.md)
     - [`qs` module](./pyckitup/qs.md)
     - [Contribute](./pyckitup/contribute.md)
-    - [TODO](./pyckitup/todo.md)
 - [Contact](./contact.md)
